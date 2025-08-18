@@ -79,11 +79,24 @@ export class LinkedList {
       if (currentNode.value === val) {
         return counter;
       }
+      currentNode = currentNode.next;
       counter++;
     }
     return -1; //Not found
   }
+
   contains(val){
+    let currentNode = this.#head;
+    while(currentNode.next){
+      if(currentNode.value === val){
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    if(currentNode.value === val){
+      return true;
+    }
+    return false;
 
   }
 
@@ -112,6 +125,7 @@ export class LinkedList {
       returnArray.push(currentNode.value);
       currentNode = currentNode.next;
     }
+    returnArray.push(currentNode.value);
     return returnArray;
   }
 

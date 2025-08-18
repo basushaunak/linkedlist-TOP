@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./script/script.js" defer></script>
+    <script src="./script/script.js" type="module" defer></script>
     <link rel="stylesheet" href="./css/styles.css" class="stylesheet">
     <title>Linked List - The Odin Project</title>
   </head>
@@ -16,12 +16,12 @@
         <input type="text" class="input-box" />
         <button id="btn-prepend" class="buttons btn-add">Prepend</button>
         <button id="btn-append" class="buttons btn-add">Append</button>
-        <button id="btn-insert-at" class="buttons btn-add">Insert At</button>
+        <button id="btn-insert-at" class="buttons btn-add" title="Enter value, index">Insert At</button>
       </div>
       <div class="remove-button-div buttons-div">
         <input type="text" class="input-box" />
-        <button id="btn-remove-at-index" class="buttons btn-remove">Remove this index</button>
-        <button id="btn-remove-at-value" class="buttons btn-remove">Remove this value</button>
+        <button id="btn-remove-at-index" class="buttons btn-remove">Remove (index)</button>
+        <button id="btn-remove-at-value" class="buttons btn-remove">Remove (value)</button>
         <button id="btn-pop" class="buttons btn-remove">Pop</button>
         <button id="btn-shift" class="buttons btn-remove">Shift</button>
       </div>
