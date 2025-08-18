@@ -1,1 +1,43 @@
 /* Stylesheet */
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+.page-title{
+    text-align: center;
+    color: red;
+    margin-block: 2em;
+}
+.buttons-div{
+    width: 50%;
+    margin-inline: auto;
+    border: 1px red solid;
+    margin-block: 2rem;
+}
+.buttons{
+    padding: 0.25em 1em;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.25rem 0.5rem;
+}
+
+.input-box{
+    width: 5em;
+    padding: 0.25em 1em;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0.25rem 0.5rem;
+}
+
+.display-result-div{
+    width: fit-content;
+    margin-inline: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    border: 2px red solid;
+    padding: 0.5em 1em;
+}

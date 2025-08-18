@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script/script.js" defer></script>
+    <link rel="stylesheet" href="./css/styles.css" class="stylesheet">
     <title>Linked List - The Odin Project</title>
   </head>
   <body>
@@ -10,28 +12,29 @@
       <h1 class="page-title">Linked List - The Odin Project</h1>
     </header>
     <main>
-      <div class="input-button-div div-buttons">
-        <input type="text" class="value" />
-        <button>Prepend</button>
-        <button>Append</button>
-        <button>Insert At</button>
+      <div class="input-button-div buttons-div">
+        <input type="text" class="input-box" />
+        <button id="btn-prepend" class="buttons btn-add">Prepend</button>
+        <button id="btn-append" class="buttons btn-add">Append</button>
+        <button id="btn-insert-at" class="buttons btn-add">Insert At</button>
       </div>
-      <div class="remove-button-div div-buttons">
-        <button>Remove this index</button>
-        <button>Remove this value</button>
-        <button>Pop</button>
-        <button>Push</button>
+      <div class="remove-button-div buttons-div">
+        <input type="text" class="input-box" />
+        <button id="btn-remove-at-index" class="buttons btn-remove">Remove this index</button>
+        <button id="btn-remove-at-value" class="buttons btn-remove">Remove this value</button>
+        <button id="btn-pop" class="buttons btn-remove">Pop</button>
+        <button id="btn-shift" class="buttons btn-remove">Shift</button>
       </div>
-      <div class="display-buttons-div div-buttons">
-        <button>Size</button>
-        <button>Head</button>
-        <button>Tail</button>
-        <button>At</button>
-        <button>Find</button>
-        <button>Contains</button>
-        <button>To String</button>
+      <div class="display-buttons-div buttons-div">
+        <button id="btn-size" class="buttons btn-display">Size</button>
+        <button id="btn-head" class="buttons btn-display">Head</button>
+        <button id="btn-tail" class="buttons btn-display">Tail</button>
+        <button id="btn-at" class="buttons btn-display">At</button>
+        <button id="btn-find" class="buttons btn-display">Find</button>
+        <button id="btn-contains" class="buttons btn-display">Contains</button>
+        <button id="btn-to-string" class="buttons btn-display">To String</button>
       </div>
-      <div class="display-result-div"></div>
+      <div class="display-result-div"><p id="result-text">Blah Blah</p></div>
       <div class="display-linked-list-div"></div>
     </main>
     <footer></footer>
