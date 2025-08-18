@@ -79,6 +79,14 @@ body{
     max-height: 25vh;
     width: 80%;
     border: 2px black solid;
-    overflow-y: scroll;
     margin-inline: auto;
+}
+
+#linked-list-display{
+    font-size: 1.5rem;
+    color: black;
+    background-color: whitesmoke;
+    width: 80%;
+    margin: 1em auto;
+
 }

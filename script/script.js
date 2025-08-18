@@ -1,17 +1,19 @@
 import { LinkedList } from "./classes.js";
 
-function init(){
-    const linkedList = new LinkedList();
-    console.log(linkedList);
-    linkedList.append(10);
-    linkedList.append(20);
-    linkedList.prepend(0);
-    linkedList.append(30);
-    linkedList.prepend(100);
-    console.log(linkedList.toString());
-    console.log("linkedList.find(0): ",linkedList.find(10));
-    console.log("linkedList.contains(30): ", linkedList.contains(30));
-
+function init() {
+  const linkedList = new LinkedList();
+  const linkedListDisplay = document.querySelector("#linked-list-display");
+  populateLinkdeList(linkedList);
+  displayLinkedList(linkedList, linkedListDisplay);
 }
 
+function displayLinkedList(linkedList, div) {
+  div.innerText = linkedList.toString();
+}
+
+function populateLinkdeList(ll) {
+  for (let i = 0; i < 20; i++) {
+    ll.append(Math.floor(Math.random() * 200));
+  }
+}
 window.onload = init;

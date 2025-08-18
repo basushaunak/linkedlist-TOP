@@ -85,26 +85,25 @@ export class LinkedList {
     return -1; //Not found
   }
 
-  contains(val){
+  contains(val) {
     let currentNode = this.#head;
-    while(currentNode.next){
-      if(currentNode.value === val){
+    while (currentNode.next) {
+      if (currentNode.value === val) {
         return true;
       }
       currentNode = currentNode.next;
     }
-    if(currentNode.value === val){
+    if (currentNode.value === val) {
       return true;
     }
     return false;
-
   }
 
   toString() {
     let valueArray = this.toArray();
     let str = ``;
     for (let i = 0; i < valueArray.length; i++) {
-      str += valueArray[i] + "=>";
+      str += valueArray[i] + " => ";
     }
     str += `null`;
     return str;
@@ -133,6 +132,7 @@ export class LinkedList {
     let newNode = new Node(value);
     if (!this.head) {
       this.#head = new Node(value);
+      this.#size++;
     } else {
       let currentNode = this.head;
       while (currentNode.next) {
@@ -166,13 +166,16 @@ export class LinkedList {
     let currentNode = this.head;
     let tmpNode = new Node(val);
     while (currentNode.next) {
-      currentNode = currentNode.next;
-      counter++;
       if (counter === index - 1) {
+        console.log("Current Node: ", currentNode.value);
+        console.log("Next Node: ", currentNode.next.value);
         tmpNode.next = currentNode.next;
         currentNode.next = tmpNode;
+        this.#size++;
         return true;
       }
+      currentNode = currentNode.next;
+      counter++;
     }
     return false;
   }
@@ -181,6 +184,9 @@ export class LinkedList {
     let counter = 0;
     let currentNode = this.head;
     if (index < 0) {
+      return false;
+    }
+    if (index >= this.#size) {
       return false;
     }
     if (index === 0) {
@@ -194,6 +200,7 @@ export class LinkedList {
         this.#size--;
         return true;
       }
+      currentNode = currentNode.next;
       counter++;
     }
     return false;
@@ -211,15 +218,16 @@ export class LinkedList {
       return true;
     }
     while (currentNode.next) {
-      currentNode = currentNode.next;
-      index++;
       if (index === this.size - 2) {
+        console.log("Index: ",index,"this.size-2: ",this.size-1);
         currentNode.next = null;
         this.#size--;
         return true;
       }
-      return false;
+      currentNode = currentNode.next;
+      index++;
     }
+    return false;
   }
 
   shift() {
