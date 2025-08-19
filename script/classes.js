@@ -48,7 +48,7 @@ export class LinkedList {
     return this.#head;
   }
 
-  tail() {
+  get tail() {
     let currentNode = this.head;
     while (currentNode.next) {
       currentNode = currentNode.next;
@@ -76,7 +76,8 @@ export class LinkedList {
     let currentNode = this.head;
     let counter = 0;
     while (counter < this.size) {
-      if (currentNode.value === val) {
+      // We are not using strict check as we want to allow users to enter any data type as value.
+      if (currentNode.value == val) {
         return counter;
       }
       currentNode = currentNode.next;
@@ -103,7 +104,7 @@ export class LinkedList {
     let valueArray = this.toArray();
     let str = ``;
     for (let i = 0; i < valueArray.length; i++) {
-      str += valueArray[i] + " => ";
+      str += valueArray[i] + "=> ";
     }
     str += `null`;
     return str;
@@ -141,6 +142,7 @@ export class LinkedList {
       currentNode.next = newNode;
       this.#size++;
     }
+    return true;
   }
 
   prepend(value) {
@@ -148,6 +150,7 @@ export class LinkedList {
     newNode.next = this.#head;
     this.#head = newNode;
     this.#size++;
+    return true;
   }
 
   insertAt(val, index) {
@@ -219,7 +222,7 @@ export class LinkedList {
     }
     while (currentNode.next) {
       if (index === this.size - 2) {
-        console.log("Index: ",index,"this.size-2: ",this.size-1);
+        console.log("Index: ", index, "this.size-2: ", this.size - 1);
         currentNode.next = null;
         this.#size--;
         return true;

@@ -12,14 +12,18 @@
       <h1 class="page-title">Linked List - The Odin Project</h1>
     </header>
     <main>
+      <div class="buttons-div">
+        <label for="value">Value</label>
+        <input type="text" id ="value" class="input-box" />
+        <label for="index">Index</label>
+        <input type="text" id="index" class="input-box" pattern="^[0-9]+$"/>
+      </div>
       <div class="input-button-div buttons-div">
-        <input type="text" class="input-box" />
         <button id="btn-prepend" class="buttons btn-add">Prepend</button>
         <button id="btn-append" class="buttons btn-add">Append</button>
         <button id="btn-insert-at" class="buttons btn-add" title="Enter value, index">Insert At</button>
       </div>
       <div class="remove-button-div buttons-div">
-        <input type="text" class="input-box" />
         <button id="btn-remove-at-index" class="buttons btn-remove">Remove (index)</button>
         <button id="btn-remove-at-value" class="buttons btn-remove">Remove (value)</button>
         <button id="btn-pop" class="buttons btn-remove">Pop</button>
@@ -34,7 +38,7 @@
         <button id="btn-contains" class="buttons btn-display">Contains</button>
         <button id="btn-to-string" class="buttons btn-display">To String</button>
       </div>
-      <div class="display-result-div"><p id="result-text">Blah Blah</p></div>
+      <div class="display-result-div hidden"><p id="result-text"></p></div>
       <div class="display-linked-list-div"><p id="linked-list-display"></p> </div>
     </main>
     <footer></footer>

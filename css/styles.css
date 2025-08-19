@@ -8,7 +8,7 @@
 }
 body{
     width: 80vw;
-    height: 80vh;
+    min-height: 80vh;
     border: 2px black solid;
     margin-inline: auto;
     margin-block: 10vh;
@@ -49,6 +49,11 @@ body{
     text-align: right;
 }
 
+.input-box:invalid{
+    background-color: pink;
+    border: 2px red solid;
+}
+
 .btn-add{
     background-color: green;
     color: white;
@@ -76,7 +81,7 @@ body{
 
 .display-linked-list-div{
     margin-block-start: 2rem;
-    max-height: 25vh;
+    /* min-height: 25vh; */
     width: 80%;
     border: 2px black solid;
     margin-inline: auto;
@@ -88,5 +93,11 @@ body{
     background-color: whitesmoke;
     width: 80%;
     margin: 1em auto;
+}
+.red-text{
+    color: red;
+}
 
+.hidden{
+    opacity: 0;
 }
