@@ -4,19 +4,6 @@ function init() {
   const linkedList = new LinkedList();
   const linkedListDisplay = document.querySelector("#linked-list-display");
   const displayResultDiv = document.querySelector(".display-result-div");
-  // const btnPrepend = document.querySelector("#btn-prepend");
-  // const btnAppend = document.querySelector("#btn-append");
-  // const btnInsertAt = document.querySelector("#btn-insert-at");
-  // const btnRemoveAtIndex = document.querySelector("#btn-remove-at-index");
-  // const btnRemoveAtValue = document.querySelector("#btn-remove-at-value");
-  // const btnPop = document.querySelector("#btn-pop");
-  // const btnPush = document.querySelector("#btn-shift");
-  // const btnSize = document.querySelector("#btn-size");
-  // const btnHead = document.querySelector("#btn-head");
-  // const btnTail = document.querySelector("#btn-tail");
-  // const btnFind = document.querySelector("#btn-find");
-  // const btnContains = document.querySelector("#btn-contains");
-  // const btnToString=document.querySelector("#btn-to-string");
   const inputValue = document.querySelector("#value");
   const inputIndex = document.querySelector("#index");
   document.addEventListener("click", (event) => {
@@ -175,8 +162,8 @@ function init() {
           }else{
             str += `<span class="red-text">Not Found</span></p>`
           }
+          displayResultDiv.classList.remove("hidden");
           displayResultDiv.innerHTML = str;
-          alert("Implementation pending");
           break;
         }
         case "btn-to-string": {
@@ -184,8 +171,19 @@ function init() {
           displayResultDiv.innerHTML=`<p class="red-text">${linkedList.toString()}</p>`
           break;
         }
+        case "btn-at":{
+          let index = Number(inputIndex.value.trim());
+          if (isNaN(index) || index < 0 || index > linkedList.size) {
+            alert("Please enter a valid Index number!");
+            inputIndex.focus();
+            return;
+          }
+          displayResultDiv.classList.remove("hidden");
+          displayResultDiv.innerHTML=`<p>Value: <span class="red-text">${linkedList.at(index).value}</span></p>`
+          break;
+        }
         default: {
-          alert("How did we get here??!");
+          alert("How did we get here??!"+btn);
           break;
         }
       }

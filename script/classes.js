@@ -85,16 +85,25 @@ export class LinkedList {
     }
     return -1; //Not found
   }
-
+at(index){
+  if(index < 0 || index >= this.size){
+    return null;
+  }
+  let currentNode = this.head;
+  for(let i=0;i<index;i++){
+    currentNode = currentNode.next;
+  }
+  return currentNode;
+}
   contains(val) {
     let currentNode = this.#head;
     while (currentNode.next) {
-      if (currentNode.value === val) {
+      if (currentNode.value == val) {
         return true;
       }
       currentNode = currentNode.next;
     }
-    if (currentNode.value === val) {
+    if (currentNode.value == val) {
       return true;
     }
     return false;
