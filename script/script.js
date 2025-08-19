@@ -162,11 +162,26 @@ function init() {
           break;
         }
         case "btn-contains": {
+          let val = inputValue.value.trim();
+          if (val.length === 0) {
+            alert("Please enter a value to prepend!");
+            inputValue.focus();
+            return;
+          }
+          let str = `<p>Status of ${val}: `;
+          let found = linkedList.contains(val);
+          if(found){
+            str += `<span class="green-text">Found</span></p>`
+          }else{
+            str += `<span class="red-text">Not Found</span></p>`
+          }
+          displayResultDiv.innerHTML = str;
           alert("Implementation pending");
           break;
         }
         case "btn-to-string": {
-          alert("Implementation pending");
+          displayResultDiv.classList.remove("hidden");
+          displayResultDiv.innerHTML=`<p class="red-text">${linkedList.toString()}</p>`
           break;
         }
         default: {

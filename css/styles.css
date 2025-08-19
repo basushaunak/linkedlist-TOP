@@ -94,8 +94,13 @@ body{
     width: 80%;
     margin: 1em auto;
 }
+
 .red-text{
     color: red;
+}
+
+.green-text{
+    color: green;
 }
 
 .hidden{
